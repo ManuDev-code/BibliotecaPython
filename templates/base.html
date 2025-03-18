@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}{% endblock %}</title>
+</head>
+<body>
+    <div class="container">
+        <div class="branding">
+            <h1>Biblioteca</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="{{ url_for('manejar_libros') }}">Libros</a></li>
+                <li><a href="{{ url_for('manejar_usuarios') }}">Usuarios</a></li>
+                <li><a href="{{ url_for('gestionar_prestamos') }}">Préstamos</a></li>
+            </ul>
+        </nav>
+    </div>
+
+{% block contenido %}
+
+{% endblock %}
+
+    <footer>
+        <p>Biblioteca &copy; 2025</p>
+    </footer>
+</body>
+</html>
