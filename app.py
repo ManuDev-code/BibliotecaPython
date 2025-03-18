@@ -9,7 +9,7 @@ def index():
     return render_template("index.html")
 
 @app.route("/libros", methods=['GET', 'POST'])
-def manejar_libros():
+def manejar_lirbos():
     if request.method == 'POST':
         data = request.form.to_dict()
         
