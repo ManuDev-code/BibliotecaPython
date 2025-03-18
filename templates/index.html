@@ -4,6 +4,53 @@
 
 {%block contenido %}
     <h1>Bienvenido a la biblioteca</h1>
+    <div class="welcome-section">
+        <div class="welcome-text">
+            <h1><span>LIBROS</span> PARA TODOS</h1>
+            <p>Gestiona tu biblioteca de forma eficiente con nuestro sistema completo de administración.</p>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar libros, autores...">
+                <button class="search-btn">Buscar</button>
+            </div>
+        </div>
+        <div class="book-display">
+            <div class="book">
+                <span class="book-title">Clásicos</span>
+            </div>
+            <div class="book">
+                <span class="book-title">Literatura</span>
+            </div>
+            <div class="book">
+                <span class="book-title">No Ficción</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="stats-container">
+        <div class="stat-card">
+            <div class="stat-number">{{ libros|length }}</div>
+            <div class="stat-title">Libros en catálogo</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ usuarios|length }}</div>
+            <div class="stat-title">Usuarios registrados</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ prestamos|length }}</div>
+            <div class="stat-title">Préstamos activos</div>
+        </div>
+    </div>
     <p>Utilice el menú de navegación para gestionar libros, usuarios y préstamos</p>
+    <div>
+        {% if mensajes %}
+            <ul>
+                {% for mensaje in mensajes %}
+                    <li>{{ mensaje }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No se cargaron datos.</p>
+        {% endif %}
+    </div>
 
 {% endblock %}

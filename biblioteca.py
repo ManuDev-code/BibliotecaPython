@@ -15,6 +15,17 @@ class Libro:
         estado = "disponible" if disponible	else "no disponible"
         print(f"El libro {self.titulo} ahora está {estado}")
         
+        
+    def to_dict(self):
+        """Devuelve un diccionario con los atributos del libro."""
+        return {
+            'codigo': self.codigo,
+            'titulo': self.titulo,
+            'autor': self.autor,
+            'editorial': self.editorial,
+            'año_publicacion': self.año_publicacion,
+            'disponible': self.disponible
+        }
 class Usuario:
     def __init__(self, id_usuario, nombre, email):
         self.id_usuario = id_usuario
@@ -35,7 +46,14 @@ class Usuario:
             self.libro_prestados.remove(libro)
             libro.actualizar_disponibilidad(True)
             print(f"Libro {libro.titulo} devuelto por {self.nombre}.")
-            
+    
+    def to_dict(self):
+        """Devuelve un diccionario con los atributos del usuario, incluyendo 'email'."""
+        return {
+            'id_usuario': self.id_usuario,
+            'nombre': self.nombre,
+            'email': self.email  # Ahora se incluye el campo 'email'
+        }
 class Bibliotecario:
     def __init__(self, id_bibliotecario, nombre):
         self.id_bibliotecario = id_bibliotecario
@@ -86,3 +104,12 @@ class Prestamo:
         print(f"""Prestamo del libro {self.libro.titulo} finalizado.
               Debe ser devuelto por {self.usuario.nombre} antes de {self.fecha_devolucion}.""")
         
+    def to_dict(self):
+        """Devuelve un diccionario con los atributos del préstamo."""
+        return {
+            'id_prestamo': self.id_prestamo,
+            'libro': self.libro.to_dict(),  # Usamos el método to_dict del libro para serializarlo
+            'usuario': self.usuario.to_dict(),  # Usamos el método to_dict del usuario para serializarlo
+            'fecha_prestamo': self.fecha_prestamo.strftime('%Y-%m-%d'),  # Convertimos las fechas a cadenas
+            'fecha_devolucion': self.fecha_devolucion.strftime('%Y-%m-%d')
+        }

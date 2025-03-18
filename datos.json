@@ -1,0 +1,39 @@
+{
+    "libros": [
+        {
+            "autor": "Valentina Toro",
+            "a\u00f1o_publicacion": "2016",
+            "codigo": "01",
+            "disponible": false,
+            "editorial": "Circulo de lectores",
+            "titulo": "El P\u00e1jaro de \u00c9bano"
+        }
+    ],
+    "prestamos": [
+        {
+            "fecha_devolucion": "2025-03-21",
+            "fecha_prestamo": "2025-03-18",
+            "id_prestamo": 1,
+            "libro": {
+                "autor": "Valentina Toro",
+                "a\u00f1o_publicacion": "2016",
+                "codigo": "01",
+                "disponible": false,
+                "editorial": "Circulo de lectores",
+                "titulo": "El P\u00e1jaro de \u00c9bano"
+            },
+            "usuario": {
+                "email": "manuelamunozlujan0@gmail.com",
+                "id_usuario": "1",
+                "nombre": "Manuela"
+            }
+        }
+    ],
+    "usuarios": [
+        {
+            "email": "manuelamunozlujan0@gmail.com",
+            "id_usuario": "1",
+            "nombre": "Manuela"
+        }
+    ]
+}
