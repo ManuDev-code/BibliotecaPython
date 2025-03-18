@@ -10,8 +10,11 @@ def index():
 
 @app.route("/libros", methods=['GET', 'POST'])
 def manejar_libros():
-    return render_template("libros.thml")
-
+    if request.method == 'POST':
+        data = request.form.to_dict()
+        
+    
+    return render_template("libros.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
