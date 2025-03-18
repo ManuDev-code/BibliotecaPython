@@ -5,6 +5,7 @@ class Libro:
         self.autor = autor
         self.editorial = editorial
         self.año_publicacion = año_publicacion
+        self.disponible = True
         
     def mostrar_info(self):
         return f"{self.titulo} por {self.autor}, codigo: {self.codigo}"
