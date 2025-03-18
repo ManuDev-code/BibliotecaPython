@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block titulo %}Libros {% endblock %}
+
+{%block contenido %}
+    <h1>Libros</h1>
+    <form method="POST" action="{{ url_form('manejar_libros') }}">
+        <div class="form-group">
+            <label for="titulo">Título</label>
+            <input type="text" class="form-control" name="titulo" id="titulo" required>
+        </div>
+
+    </form>
+
+{% endblock %}

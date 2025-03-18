@@ -9,8 +9,9 @@ def index():
     return render_template("index.html")
 
 @app.route("/libros", methods=['GET', 'POST'])
-def manejar_lirbos():
-    pass
+def manejar_libros():
+    return render_template("libros.thml")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
